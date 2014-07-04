@@ -1,12 +1,12 @@
 my-resolver
 ===========
 
-This is a wrapper cookbook consuming the community cookbook https://github.com/opscode-cookbooks/resolver
+This is a wrapper cookbook reusing the community's sudo cookbook https://github.com/opscode-cookbooks/resolver
 
 Why I needed this,
 ---
 1. Our org has multiple search domains in resolv.conf  <-> Community cookbook allows only one
-2. "domain" field is must for us.
+2. "domain" field is a must.
     - Domain are not set sometimes in servers.
     - This cookbook considers user provided domain, if not given, it considers node['domain'] if that also is not given then the field "domain" is discarded.
 
