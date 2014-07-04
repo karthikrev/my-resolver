@@ -1,0 +1,10 @@
+search <%= @search.map { | searchdomain | searchdomain }.join(" ") %>
+<% @nameservers.each do |nameserver| -%>
+nameserver <%= nameserver %>
+<% end %>
+<% unless @options.empty? -%>
+options <%= @options.map { |opt, val| val ? "#{opt}:#{val}" : opt }.sort.join(" ") %>
+<% end -%>
+<% domain = @domain or node['domain'] %>
+<%= "domain #{domain}" if domain %>
+
